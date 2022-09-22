@@ -1,0 +1,43 @@
+{
+
+	"Actor": {
+		"types": ["figure"],
+
+    "figure": {
+      "trackables": [
+        {"name": "Name","value": 0},
+        {"name": "Name","value": 0},
+        {"name": "Name","value": 0},
+        {"name": "Name","value": 0}
+      ],
+      "usables": [
+        {"name": "Name", "curValue": 0, "maxValue": 0},
+        {"name": "Name", "curValue": 0, "maxValue": 0},
+        {"name": "Name", "curValue": 0, "maxValue": 0}
+      ],
+      "notes": "Other important character information",
+      "moreNotes": "Make notes here"
+    }
+  },
+
+  "Item": {
+    "types": ["gear", "feature"],
+    
+    "templates": {
+      "describable": {
+        "description": "Provide a description here"
+      }
+    },
+
+    "gear": {
+      "templates": ["describable"],
+      "weight": ""
+    },
+
+    "feature": {
+      "templates": ["describable"],
+      "category": "other"
+    }
+  }
+
+}

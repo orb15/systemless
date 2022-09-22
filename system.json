@@ -1,0 +1,26 @@
+{
+  "id": "systemless2",
+  "title": "Systemless System 2",
+  "description": "a systemless VTT system by orb15",
+  "version": "0.3.0",
+  "authors": [    {
+    "name": "orb15"
+  }],
+  "compatibility": {
+    "minimum": 10,
+    "verified": 10.285,
+    "maximum": 10
+  },
+  "scripts": [],
+  "esmodules": ["systemless.js"],
+  "styles": ["systemless.css"],
+  "packs": [],
+  "languages": [],
+  "socket": false,
+  "initiative": "",
+  "gridDistance": 2,
+  "gridUnits": "m",
+  "url": "",
+  "manifest": "",
+  "download": ""
+}

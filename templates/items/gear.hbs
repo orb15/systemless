@@ -1,0 +1,24 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  
+  <div class="flexrow core-details">
+    <div class="flexrow">
+      <img class="pic" src="{{source.img}}" title="{{source.name}}" data-edit="img"/>
+      <input class="itemname" name="name" type="text" value="{{source.name}}" placeholder="Name"/>
+    </div>
+  </div>
+  
+
+  <div class="flexrow">
+    
+    <div class="flexrow weight">
+      <span>Weight:</span>
+      <input name="system.weight" type="text" value="{{system.weight}}" placeholder="0"/>
+    </div>
+
+    <div class="flexrow editor">
+      {{editor system.description target="system.description" button=true owner=true editable=true}}
+    </div>
+
+  </div>
+
+</form> 
