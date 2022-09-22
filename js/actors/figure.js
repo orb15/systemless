@@ -31,7 +31,7 @@ export default class SystemlessFigureSheet extends ActorSheet {
     //obtain the base actor (for access to anything  on the actor object)
     const actor = context.actor;
 
-    //add the LOSER config to make building select boxes easy
+    //add the SYSTEMLESS config to make building select boxes easy
     const config = CONFIG.SYSTEMLESS;
 
     //add additional items to the context
@@ -52,4 +52,9 @@ export default class SystemlessFigureSheet extends ActorSheet {
   get template(){
     return "systems/systemless2/templates/actors/figure.hbs";
   }
+
+  /* -------------------------------------------------------------
+   Utility and Helpers
+  ----------------------------------------------------------------*/
+
 }
