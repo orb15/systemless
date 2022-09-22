@@ -1,0 +1,120 @@
+<div class= "inventory-partial flexcol">
+
+  {{!-- Overall Header --}}
+  {{#inventory.meta.hasNumericWeight}}
+  <div class="flexrow header">
+    <span class="weight">Total Weight: {{inventory.meta.totalWeight}}</span>
+  </div>
+  {{/inventory.meta.hasNumericWeight}}
+
+  <div class="inventory-lists">
+
+    {{!-- Weapons --}}
+    {{#inventory.meta.hasWeapon}}
+    <div class="flexrow header">
+      Weapon
+      {{#inventory.meta.hasWeaponWeight}}<span class="weight">Weight: {{inventory.weapon.weight}}</span>{{/inventory.meta.hasWeaponWeight}}
+    </div>
+    <ul>
+      {{#each inventory.weapon.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-slots drop">{{#this.usesWeight}} Weight: {{this.actWeight}}{{/this.usesWeight}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/inventory.meta.hasWeapon}}
+
+    {{!-- Armor --}}
+    {{#inventory.meta.hasArmor}}
+    <div class="flexrow header">
+      Armor
+      {{#inventory.meta.hasArmorWeight}}<span class="weight">Weight: {{inventory.armor.weight}}</span>{{/inventory.meta.hasArmorWeight}}
+    </div>
+    <ul>
+      {{#each inventory.armor.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-slots drop">{{#this.usesWeight}} Weight: {{this.actWeight}}{{/this.usesWeight}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/inventory.meta.hasArmor}}
+
+    {{!-- Equipment --}}
+    {{#inventory.meta.hasEquipment}}
+    <div class="flexrow header">
+      Equipment
+      {{#inventory.meta.hasEquipmentWeight}}<span class="weight">Weight: {{inventory.equpment.weight}}</span>{{/inventory.meta.hasEquipmentWeight}}
+    </div>
+    <ul>
+      {{#each inventory.equpment.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-slots drop">{{#this.usesWeight}} Weight: {{this.actWeight}}{{/this.usesWeight}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/inventory.meta.hasEquipment}}
+
+    {{!-- Treasure --}}
+    {{#inventory.meta.hasTreasure}}
+    <div class="flexrow header">
+      Treasure
+      {{#inventory.meta.hasTreasureWeight}}<span class="weight">Weight: {{inventory.treasure.weight}}</span>{{/inventory.meta.hasTreasureWeight}}
+    </div>
+    <ul>
+      {{#each inventory.treasure.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-slots drop">{{#this.usesWeight}} Weight: {{this.actWeight}}{{/this.usesWeight}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/inventory.meta.hasTreasure}}
+
+
+    {{!-- Other --}}
+    {{#inventory.meta.hasOther}}
+    <div class="flexrow header">
+      Other
+      {{#inventory.meta.hasOtherWeight}}<span class="weight">Weight: {{inventory.other.weight}}</span>{{/inventory.meta.hasOtherWeight}}
+    </div>
+    <ul>
+      {{#each inventory.other.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-slots drop">{{#this.usesWeight}} Weight: {{this.actWeight}}{{/this.usesWeight}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/inventory.meta.hasOther}}
+
+  </div>
+
+</div>

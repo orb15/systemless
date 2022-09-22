@@ -10,7 +10,7 @@
   {{!-- Character Sheet Navigation --}}
   <nav class="sheet-navigation tabs flexrow" data-group="primary">
       <a class="item active" data-tab="core">Basics</a>
-      <a class="item" data-tab="inventory">Inventory</a>
+          {{#inventory.meta.hasAnyInventory}}<a class="item" data-tab="inventory">Inventory</a>{{/inventory.meta.hasAnyInventory}}
       <a class="item" data-tab="features">Features</a>
       <a class="item" data-tab="notes">Notes</a>
   </nav>
@@ -24,9 +24,9 @@
           <div class="flexcol cols {{#unless @last}}rmargin{{/unless}}">
             <input class="name noborder" name="system.usables.{{@index}}.name" type="text" value="{{this.name}}" placeholder="Name"/>
             <div class="flexrow">
-              <input class="value" name="system.usables.{{@index}}.curValue" type="text" value="{{this.curValue}}" placeholder="0"/>
+              <input class="value" name="system.usables.{{@index}}.value" type="text" value="{{this.value}}" placeholder="0"/>
               <span class="sep"> / </span>
-              <input class="value" name="system.usables.{{@index}}.maxValue" type="text" value="{{this.maxValue}}" placeholder="0"/>
+              <input class="value" name="system.usables.{{@index}}.max" type="text" value="{{this.max}}" placeholder="0"/>
             </div> 
           </div>
         {{/each}}
@@ -52,7 +52,11 @@
 
     {{!-- Inventory Tab --}}
     <div class="tab inventory flexcol" data-group="primary" data-tab="inventory">
-        Inventory goes here
+      {{#if inventory.meta.usesSimpleInventory}}
+        {{> "systems/systemless2/templates/actors/parts/inventory-simple-partial.hbs"}}
+      {{else}}
+        {{> "systems/systemless2/templates/actors/parts/inventory-partial.hbs"}}
+      {{/if}}
     </div>
 
     {{!-- Features Tab --}}

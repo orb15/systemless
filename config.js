@@ -17,7 +17,15 @@ SYSTEMLESS.FeatureCategories = {
     "pet": "Pet",
     "save": "Save",
     "skill": "Skill",
-    "trait": "Trait",
- 
-    "other": "Other"
+    "trait": "Trait"
   };
+
+//---------------------------------------------------------------
+// Gear
+//---------------------------------------------------------------
+SYSTEMLESS.GearCategories = {
+  "armor": "Armor",
+  "equpment": "Equipment",
+  "treasure": "Treasure",
+  "weapon": "Weapon"
+};

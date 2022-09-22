@@ -5,6 +5,8 @@ export const preloadHandlebarsTemplates = async function() {
 
     // Actor Sheet Partials
     "systems/systemless2/templates/actors/parts/notes-partial.hbs",
+    "systems/systemless2/templates/actors/parts/inventory-partial.hbs",
+    "systems/systemless2/templates/actors/parts/inventory-simple-partial.hbs",
 
     // Item Sheet Partials
   ]);

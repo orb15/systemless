@@ -10,14 +10,22 @@
 
   <div class="flexrow">
     
-    <div class="flexrow weight">
-      <span>Weight:</span>
-      <input name="system.weight" type="text" value="{{system.weight}}" placeholder="0"/>
+    <div class="flexcol details">
+
+      <div class="flexrow weight">
+        <span>Weight:</span>
+        <input name="system.weight" type="text" value="{{system.weight}}" placeholder="0"/>
+      </div>
+
+      <select class="category" name="system.category">
+        {{selectOptions config.GearCategories selected=system.category blank="-- Category --"}}
+      </select>
+
     </div>
 
-    <div class="flexrow editor">
-      {{editor system.description target="system.description" button=true owner=true editable=true}}
-    </div>
+      <div class="flexrow editor">
+        {{editor system.description target="system.description" button=true owner=true editable=true}}
+      </div>
 
   </div>
 

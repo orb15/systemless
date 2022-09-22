@@ -11,12 +11,12 @@
         {"name": "Name","value": 0}
       ],
       "usables": [
-        {"name": "Name", "curValue": 0, "maxValue": 0},
-        {"name": "Name", "curValue": 0, "maxValue": 0},
-        {"name": "Name", "curValue": 0, "maxValue": 0}
+        {"name": "Name", "value": 0, "max": 0},
+        {"name": "Name", "value": 0, "max": 0},
+        {"name": "Name", "value": 0, "max": 0}
       ],
       "notes": "Other important character information",
-      "moreNotes": "Make notes here"
+      "moreNotes": "Make additional notes here"
     }
   },
 
@@ -26,17 +26,19 @@
     "templates": {
       "describable": {
         "description": "Provide a description here"
+      },
+      "catagorized": {
+        "category": "-- Category --"
       }
     },
 
     "gear": {
-      "templates": ["describable"],
+      "templates": ["describable", "catagorized"],
       "weight": ""
     },
 
     "feature": {
-      "templates": ["describable"],
-      "category": "other"
+      "templates": ["describable", "catagorized"]
     }
   }
 

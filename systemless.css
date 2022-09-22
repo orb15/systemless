@@ -153,9 +153,6 @@
   border: none;
   border-right: 2px groove #eeede0;
 }
-.systemless.sheet .sheet-navigation .item.active {
-  border-bottom: 3px solid #44191A;
-}
 
 /* ----------------------------------------- */
 /* Item Sheet                                */
@@ -191,16 +188,19 @@
   flex: 0 0 150px;
   max-width: 150px;
   margin-left: 4px;
-  border: none;
+  margin-top: 16px;
   border-right: 2px groove #eeede0;
 }
 
 /* ----------------------------------------- */
 /* Gear Item Sheet                           */
 /* ----------------------------------------- */
-.systemless.sheet.item.gear .weight {
+.systemless.sheet.item.gear .details {
   flex: 0 0 150px;
   max-width: 150px;
+  max-height: 80px;
+  margin-left: 4px;
+  margin-top: 16px;
   border: none;
   border-right: 2px groove #eeede0;
 }
@@ -213,6 +213,9 @@
   font-size: 24px;
   width: 50px;
   height: 30px;
+}
+.systemless.sheet.item.gear .category {
+  max-height: 30px;
 }
 
 /* ----------------------------------------- */
@@ -244,14 +247,18 @@
 .systemless.sheet.actor .charname {
   font-size: 42px;
   min-height: 48px;
+  box-shadow: none;
 }
 
 /* ----------------------------------------- */
 /* Figure Actor Sheet - Basics / Core Tab    */
 /* ----------------------------------------- */
+.systemless.sheet.actor.figure .drop {
+    margin-top: 6px;
+}
 .systemless.sheet.actor.figure .sheet-navigation {
-  font-size: 24px;
-  max-height: 28px;
+  font-size: 20px;
+  max-height: 24px;
   margin-top: 4px;
   text-align: center;
 }
@@ -292,4 +299,45 @@
 }
 .systemless.sheet.actor.figure .notes-partial header {
   font-size: 20px;
+  max-height: 24px;
+}
+
+/* ----------------------------------------- */
+/* Figure Actor Sheet - Inventory Partial    */
+/* ----------------------------------------- */
+.systemless.sheet.actor .inventory-partial {
+  margin-left: 8px;
+  margin-top: 16px;
+  margin-right: 4px;
+}
+.systemless.sheet.actor .inventory-partial .header {
+  border-bottom: 2px groove #eeede0;
+  font-size: 16px;
+  max-height: 20px;
+}
+.systemless.sheet.actor .inventory-partial .header .weight {
+  text-align: right;
+  padding-right: 20px;
+}
+.systemless.sheet.actor .inventory-partial .inventory-lists .header {
+  border-bottom: 2px groove #eeede0;
+  font-size: 16px;
+  max-height: 20px;
+  background-color: #999;
+  margin-top: 6px;
+}
+.systemless.sheet.actor .inventory-partial .inventory-lists .item-image {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.systemless.sheet.actor .inventory-partial .inventory-lists .item-image:hover {
+  cursor: pointer;
+  background-size: 40px;
+}
+.systemless.sheet.actor .inventory-partial .inventory-lists .item-name {
+  flex: 1 0 150px;
+  min-width: 150px;
 }
