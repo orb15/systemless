@@ -53,24 +53,24 @@
     {{!-- Inventory Tab --}}
     <div class="tab inventory flexcol" data-group="primary" data-tab="inventory">
       {{#if inventory.meta.usesSimpleInventory}}
-        {{> "systems/systemless2/templates/actors/parts/inventory-simple-partial.hbs"}}
+        {{> "systems/systemless/templates/actors/parts/inventory-simple-partial.hbs"}}
       {{else}}
-        {{> "systems/systemless2/templates/actors/parts/inventory-partial.hbs"}}
+        {{> "systems/systemless/templates/actors/parts/inventory-partial.hbs"}}
       {{/if}}
     </div>
 
     {{!-- Features Tab --}}
     <div class="tab features flexcol" data-group="primary" data-tab="features">
       {{#if features.meta.usesSimpleFeatures}}
-        {{> "systems/systemless2/templates/actors/parts/features-simple-partial.hbs"}}
+        {{> "systems/systemless/templates/actors/parts/features-simple-partial.hbs"}}
       {{else}}
-        {{> "systems/systemless2/templates/actors/parts/features-partial.hbs"}}
+        {{> "systems/systemless/templates/actors/parts/features-partial.hbs"}}
       {{/if}}
     </div>
 
     {{!-- Notes Tab --}}
     <div class="tab notes flexcol" data-group="primary" data-tab="notes">
-      {{> "systems/systemless2/templates/actors/parts/notes-partial.hbs"}}
+      {{> "systems/systemless/templates/actors/parts/notes-partial.hbs"}}
     </div>
 
   </section>

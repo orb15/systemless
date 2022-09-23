@@ -31,6 +31,6 @@ export default class SystemlessGearItemSheet extends SystemlessItemSheetBase {
   //returns the path to the HTML-based character sheet.
   //@Override ItemSheet
   get template(){
-    return "systems/systemless2/templates/items/gear.hbs";
+    return "systems/systemless/templates/items/gear.hbs";
   }
 }

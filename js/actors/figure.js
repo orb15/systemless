@@ -72,7 +72,7 @@ export default class SystemlessFigureSheet extends ActorSheet {
   //returns the path to the HTML-based character sheet.
   //@Override LoserMonsterSheetBase
   get template(){
-    return "systems/systemless2/templates/actors/figure.hbs";
+    return "systems/systemless/templates/actors/figure.hbs";
   }
 
   /* -------------------------------------------------------------
