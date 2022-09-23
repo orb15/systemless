@@ -38,12 +38,16 @@ export default class SystemlessFigureSheet extends ActorSheet {
     //organize items into an inventory
     const inventory = this._prepareInventory(actor.items);
 
+    //organize items into a feature list
+    const features = this._prepareFeatures(actor.items);
+
     //add additional items to the context
     foundry.utils.mergeObject(context, {
       system: actor.system, //this is the data from the template!
       source: actor, //this is data common to all actors in FVTT (name, id, img...)
       config: config,
-      inventory: inventory
+      inventory: inventory,
+      features: features
     });
 
     //this object will be passed to the template for handlebars rendering. Note that the handlesbars reference
@@ -52,7 +56,7 @@ export default class SystemlessFigureSheet extends ActorSheet {
     return context;
   }
 
-    //Establish listeners for events on the character sheet
+  //Establish listeners for events on the character sheet
   //@Override Application
   activateListeners(html) {
     
@@ -144,7 +148,20 @@ export default class SystemlessFigureSheet extends ActorSheet {
       "other": {"weight": 0,"items": [],"type": "other"},
     };
 
-    allItems.map(item => {
+    //index through all items on this figure, but only do so if the item
+    //is of type "gear" as only "gear" should appear in inventory
+    allItems.filter(item => {
+      if (item.type === "gear") {
+        return true;
+      }
+      return false;
+    })
+    .map(item => {
+
+
+      if (item.type != "gear") {
+
+      }
 
       //if we enter this code, we have at least 1 item
       inventory.meta.hasAnyInventory = true;
@@ -233,18 +250,18 @@ export default class SystemlessFigureSheet extends ActorSheet {
       inventory.treasure.weight + inventory.weapon.weight + inventory.other.weight;
 
     //sort inventory
-    inventory.armor.items.sort(this._inventorySorter)
-    inventory.equipment.items.sort(this._inventorySorter)
-    inventory.treasure.items.sort(this._inventorySorter)
-    inventory.weapon.items.sort(this._inventorySorter)
-    inventory.other.items.sort(this._inventorySorter)
+    inventory.armor.items.sort(this._nameOnlySorter)
+    inventory.equipment.items.sort(this._nameOnlySorter)
+    inventory.treasure.items.sort(this._nameOnlySorter)
+    inventory.weapon.items.sort(this._nameOnlySorter)
+    inventory.other.items.sort(this._nameOnlySorter)
     
     return inventory;
 
   }
 
   //sort inventory by name only for now
-  _inventorySorter(i, j) {
+  _nameOnlySorter(i, j) {
     return i.name <= j.name;
   }
 
@@ -268,6 +285,154 @@ export default class SystemlessFigureSheet extends ActorSheet {
     }
 
     return {"weight": numericWeight, "weightType": "numVal"};
+  }
+
+  _prepareFeatures(allItems) {
+
+    //prepare an organized feature list
+    const features = {
+      "meta": {
+
+        "hasAnyFeatures": false,
+        "usesSimpleFeatures": false,
+        "hasAnyCategories": false,
+
+        "hasAbility": false,
+        "hasAsset": false,
+        "hasBackground": false,
+        "hasFeature": false,
+        "hasHeritage": false,
+        "hasLanguage": false,
+        "hasMagic": false,
+        "hasPet": false,
+        "hasProfession": false,
+        "hasSave": false,
+        "hasSkill": false,
+        "hasTrait": false,
+
+        "hasOther": false,
+      },
+      
+      "ability": {"items": [],"type": "ability"},
+      "asset": {"items": [],"type": "asset"},
+      "background": {"items": [],"type": "background"},
+      "feature": {"items": [],"type": "feature"},
+      "heritage": {"items": [],"type": "heritage"},
+      "language": {"items": [],"type": "language"},
+      "magic": {"items": [],"type": "magic"},
+      "pet": {"items": [],"type": "pet"},
+      "profession": {"items": [],"type": "profession"},
+      "save": {"items": [],"type": "save"},
+      "skill": {"items": [],"type": "skill"},
+      "trait": {"items": [],"type": "trait"},
+      "other": {"items": [],"type": "other"},
+    };
+
+    //index through all items on this figure, but only do so if the item
+    //is of type "feature" as only "features" should appear in the features list
+    allItems.filter(item => {
+      if (item.type === "feature") {
+        return true;
+      }
+      return false;
+    }).map(item => {
+
+      //if we enter this code, we have at least 1 item
+      features.meta.hasAnyFeatures = true;
+
+      //do some category-specific summing of numeric weights
+      //and set per-category flags
+      switch(item.system.category) {
+        case "ability":
+          features.ability.items.push(item);
+          features.meta.hasAbility = true;
+          features.meta.hasAnyCategories = true;
+          break;
+        case "asset":
+          features.asset.items.push(item);
+          features.meta.hasAsset = true;
+          features.meta.hasAnyCategories = true;
+          break;
+        case "background":
+          features.background.items.push(item);
+          features.meta.hasBackground = true;
+          features.meta.hasAnyCategories = true;
+          break;
+        case "feature":
+          features.feature.items.push(item);
+          features.meta.hasFeature = true;
+          features.meta.hasAnyCategories = true;
+          break;
+        case "heritage":
+          features.heritage.items.push(item);
+          features.meta.hasHeritage = true;
+          features.meta.hasAnyCategories = true;
+          break;
+        case "language":
+          features.language.items.push(item);
+          features.meta.hasLanguage = true;
+          features.meta.hasAnyCategories = true;
+          break;
+        case "magic":
+          features.magic.items.push(item);
+          features.meta.hasMagic = true;
+          features.meta.hasAnyCategories = true;
+          break;
+        case "pet":
+          features.pet.items.push(item);
+          features.meta.hasPet = true;
+          features.meta.hasAnyCategories = true;
+          break;
+        case "profession":
+          features.profession.items.push(item);
+          features.meta.hasProfession = true;
+          features.meta.hasAnyCategories = true;
+          break;
+        case "save":
+          features.save.items.push(item);
+          features.meta.hasSave = true;
+          features.meta.hasAnyCategories = true;
+          break;
+        case "skill":
+          features.skill.items.push(item);
+          features.meta.hasSkill = true;
+          features.meta.hasAnyCategories = true;
+          break;   
+        case "trait":
+          features.trait.items.push(item);
+          features.meta.hasTrait = true;
+          features.meta.hasAnyCategories = true;
+          break;  
+        default:
+          features.other.items.push(item);
+          features.meta.hasOther = true;
+          break;   
+      }
+    });
+
+    //sort each category
+    features.ability.items.sort(this._nameOnlySorter);
+    features.asset.items.sort(this._nameOnlySorter);
+    features.background.items.sort(this._nameOnlySorter);
+    features.profession.items.sort(this._nameOnlySorter);
+    features.feature.items.sort(this._nameOnlySorter);
+    features.heritage.items.sort(this._nameOnlySorter);
+    features.language.items.sort(this._nameOnlySorter);
+    features.magic.items.sort(this._nameOnlySorter);
+    features.pet.items.sort(this._nameOnlySorter);
+    features.save.items.sort(this._nameOnlySorter);
+    features.skill.items.sort(this._nameOnlySorter);
+    features.trait.items.sort(this._nameOnlySorter);
+    features.other.items.sort(this._nameOnlySorter);
+
+    //determine if we are using "simple features". Simple features is where there are no 
+    //categories set on ANY items, implying the user just wants a list of things about their
+    //character without anything fancy
+    if (features.meta.hasOther && !features.meta.hasAnyCategories) {
+      features.meta.usesSimpleFeatures = true;
+    }
+
+    return features;
   }
 
     //displays a generic chat message

@@ -1,0 +1,253 @@
+<div class= "itemlist-partial flexcol">
+
+  <div class="itemlist-lists">
+
+    {{!-- Ability --}}
+    {{#features.meta.hasAbility}}
+    <div class="flexrow header">
+      Abilities
+    </div>
+    <ul>
+      {{#each features.ability.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasAbility}}
+
+    {{!-- Asset --}}
+    {{#features.meta.hasAsset}}
+    <div class="flexrow header">
+      Assets
+    </div>
+    <ul>
+      {{#each features.asset.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasAsset}}
+
+    {{!-- Background --}}
+    {{#features.meta.hasBackground}}
+    <div class="flexrow header">
+      Background
+    </div>
+    <ul>
+      {{#each features.background.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasBackground}}
+
+    {{!-- Feature --}}
+    {{#features.meta.hasFeature}}
+    <div class="flexrow header">
+      Features
+    </div>
+    <ul>
+      {{#each features.feature.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasFeature}}
+
+    {{!-- Heritage --}}
+    {{#features.meta.hasHeritage}}
+    <div class="flexrow header">
+      Heritage
+    </div>
+    <ul>
+      {{#each features.heritage.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasHeritage}}
+
+    {{!-- Language --}}
+    {{#features.meta.hasLanguage}}
+    <div class="flexrow header">
+      Languages
+    </div>
+    <ul>
+      {{#each features.language.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasLanguage}}
+
+    {{!-- Magic --}}
+    {{#features.meta.hasMagic}}
+    <div class="flexrow header">
+      Magic
+    </div>
+    <ul>
+      {{#each features.magic.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasMagic}}
+
+    {{!-- Pet --}}
+    {{#features.meta.hasPet}}
+    <div class="flexrow header">
+      Pets
+    </div>
+    <ul>
+      {{#each features.pet.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasPet}}
+
+    {{!-- Profession --}}
+    {{#features.meta.hasProfession}}
+    <div class="flexrow header">
+      Profession
+    </div>
+    <ul>
+      {{#each features.profession.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasProfession}}
+
+    {{!-- Save --}}
+    {{#features.meta.hasSave}}
+    <div class="flexrow header">
+      Saves
+    </div>
+    <ul>
+      {{#each features.save.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasSave}}
+
+    {{!-- Skill --}}
+    {{#features.meta.hasSkill}}
+    <div class="flexrow header">
+      Skills
+    </div>
+    <ul>
+      {{#each features.skill.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasSkill}}
+
+    {{!-- Trait --}}
+    {{#features.meta.hasTrait}}
+    <div class="flexrow header">
+      Traits
+    </div>
+    <ul>
+      {{#each features.trait.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasTrait}}
+
+    {{!-- Other --}}
+    {{#features.meta.hasOther}}
+    <div class="flexrow header">
+      Other
+    </div>
+    <ul>
+      {{#each features.other.items}}
+        <li class="item flexrow" data-item-id='{{this._id}}'>
+          <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
+          <div class="item-name drop">{{this.name}}</div>
+          <div class="item-control flexrow drop">
+            <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
+            <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{/features.meta.hasOther}}
+
+
+</div>

@@ -302,42 +302,42 @@
   max-height: 24px;
 }
 
-/* ----------------------------------------- */
-/* Figure Actor Sheet - Inventory Partial    */
-/* ----------------------------------------- */
-.systemless.sheet.actor .inventory-partial {
+/* ----------------------------------------- ----------*/
+/* Figure Actor Sheet - Inventory / Feature Partial    */
+/* ----------------------------------------- ----------*/
+.systemless.sheet.actor .itemlist-partial {
   margin-left: 8px;
   margin-top: 16px;
   margin-right: 4px;
 }
-.systemless.sheet.actor .inventory-partial .header {
+.systemless.sheet.actor .itemlist-partial .header {
   border-bottom: 2px groove #eeede0;
   font-size: 16px;
   max-height: 20px;
 }
-.systemless.sheet.actor .inventory-partial .header .weight {
+.systemless.sheet.actor .itemlist-partial .header .weight {
   text-align: right;
   padding-right: 20px;
 }
-.systemless.sheet.actor .inventory-partial .inventory-lists .header {
+.systemless.sheet.actor .itemlist-partial .itemlist-lists .header {
   border-bottom: 2px groove #eeede0;
   font-size: 16px;
   max-height: 20px;
   background-color: #999;
   margin-top: 6px;
 }
-.systemless.sheet.actor .inventory-partial .inventory-lists .item-image {
+.systemless.sheet.actor .itemlist-partial .itemlist-lists .item-image {
   flex: 0 0 30px;
   height: 30px;
   background-size: 30px;
   border: none;
   margin-right: 5px;
 }
-.systemless.sheet.actor .inventory-partial .inventory-lists .item-image:hover {
+.systemless.sheet.actor .itemlist-partial .itemlist-lists .item-image:hover {
   cursor: pointer;
   background-size: 40px;
 }
-.systemless.sheet.actor .inventory-partial .inventory-lists .item-name {
+.systemless.sheet.actor .itemlist-partial .itemlist-lists .item-name {
   flex: 1 0 150px;
   min-width: 150px;
 }

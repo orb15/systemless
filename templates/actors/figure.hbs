@@ -11,7 +11,7 @@
   <nav class="sheet-navigation tabs flexrow" data-group="primary">
       <a class="item active" data-tab="core">Basics</a>
           {{#inventory.meta.hasAnyInventory}}<a class="item" data-tab="inventory">Inventory</a>{{/inventory.meta.hasAnyInventory}}
-      <a class="item" data-tab="features">Features</a>
+          {{#features.meta.hasAnyFeatures}}<a class="item" data-tab="features">Features</a>{{/features.meta.hasAnyFeatures}}
       <a class="item" data-tab="notes">Notes</a>
   </nav>
 
@@ -61,7 +61,11 @@
 
     {{!-- Features Tab --}}
     <div class="tab features flexcol" data-group="primary" data-tab="features">
-        Features goes here
+      {{#if features.meta.usesSimpleFeatures}}
+        {{> "systems/systemless2/templates/actors/parts/features-simple-partial.hbs"}}
+      {{else}}
+        {{> "systems/systemless2/templates/actors/parts/features-partial.hbs"}}
+      {{/if}}
     </div>
 
     {{!-- Notes Tab --}}
