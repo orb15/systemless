@@ -10,7 +10,7 @@ import {SYSTEMLESS} from "./config.js";
 
 Hooks.once("init", function() {
 
-  console.log("Systemless | Begin Initinitialization");
+  console.log("Systemless | Begin Initialization");
 
   // ================================
   //  Register Systemless-specific CONFIG
