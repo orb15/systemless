@@ -38,5 +38,6 @@ This Changelog wil be updated with each minor and major version change.
 This Changelog will be periodically updated to reflect the latest version of FVTT on which the Systemless system has been tested.
 
 | Tagged Version | Foundry Compatibility | Notes |
-|----------------|-----------------------|-------|
-| v1.0.0         | FVTT v10 Build 286    |       |
+|----------------|-----------------------|--------------------------|
+| v1.0.1         | FVTT v10 Build 286    |  inventory bug fixes     |
+| v1.0.0         | FVTT v10 Build 286    |                          |
