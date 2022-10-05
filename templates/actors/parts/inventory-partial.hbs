@@ -58,7 +58,7 @@
       {{#inventory.meta.hasEquipmentWeight}}<span class="weight">Weight: {{inventory.equpment.weight}}</span>{{/inventory.meta.hasEquipmentWeight}}
     </div>
     <ul>
-      {{#each inventory.equpment.items}}
+      {{#each inventory.equipment.items}}
         <li class="item flexrow" data-item-id='{{this._id}}'>
           <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
           <div class="item-name drop">{{this.name}}</div>

@@ -25,7 +25,7 @@ SYSTEMLESS.FeatureCategories = {
 //---------------------------------------------------------------
 SYSTEMLESS.GearCategories = {
   "armor": "Armor",
-  "equpment": "Equipment",
+  "equipment": "Equipment",
   "treasure": "Treasure",
   "weapon": "Weapon"
 };
