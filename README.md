@@ -39,6 +39,7 @@ This Changelog will be periodically updated to reflect the latest version of FVT
 
 | Tagged Version | Foundry Compatibility | Notes |
 |----------------|-----------------------|--------------------------|
+| v1.0.3         | FVTT v10 Build 290    |  update system.json      |
 | v1.0.2         | FVTT v10 Build 290    |  inventory bug fixes     |
 | v1.0.1         | FVTT v10 Build 286    |  inventory bug fixes     |
 | v1.0.0         | FVTT v10 Build 286    |                          |
