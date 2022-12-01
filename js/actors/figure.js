@@ -262,7 +262,10 @@ export default class SystemlessFigureSheet extends ActorSheet {
 
   //sort inventory by name only for now
   _nameOnlySorter(i, j) {
-    return i.name <= j.name;
+    if(i.name <= j.name) {
+      return -1;
+    }
+    return 1;
   }
 
   _calcWeight(item) {
