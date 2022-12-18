@@ -11,6 +11,7 @@ SYSTEMLESS.FeatureCategories = {
     "background": "Background",
     "profession": "Profession",
     "feature": "Feature",
+    "focus": "Focus",
     "heritage": "Heritage",
     "language": "Language",
     "magic": "Magic",
