@@ -304,6 +304,7 @@ export default class SystemlessFigureSheet extends ActorSheet {
         "hasAsset": false,
         "hasBackground": false,
         "hasFeature": false,
+        "hasFocus": false,
         "hasHeritage": false,
         "hasLanguage": false,
         "hasMagic": false,
@@ -320,6 +321,7 @@ export default class SystemlessFigureSheet extends ActorSheet {
       "asset": {"items": [],"type": "asset"},
       "background": {"items": [],"type": "background"},
       "feature": {"items": [],"type": "feature"},
+      "focus": {"items": [],"type": "focus"},
       "heritage": {"items": [],"type": "heritage"},
       "language": {"items": [],"type": "language"},
       "magic": {"items": [],"type": "magic"},
@@ -364,6 +366,11 @@ export default class SystemlessFigureSheet extends ActorSheet {
         case "feature":
           features.feature.items.push(item);
           features.meta.hasFeature = true;
+          features.meta.hasAnyCategories = true;
+          break;
+        case "focus":
+          features.focus.items.push(item);
+          features.meta.hasFocus = true;
           features.meta.hasAnyCategories = true;
           break;
         case "heritage":
@@ -419,6 +426,7 @@ export default class SystemlessFigureSheet extends ActorSheet {
     features.background.items.sort(this._nameOnlySorter);
     features.profession.items.sort(this._nameOnlySorter);
     features.feature.items.sort(this._nameOnlySorter);
+    features.focus.items.sort(this._nameOnlySorter);
     features.heritage.items.sort(this._nameOnlySorter);
     features.language.items.sort(this._nameOnlySorter);
     features.magic.items.sort(this._nameOnlySorter);
