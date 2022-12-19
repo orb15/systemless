@@ -30,3 +30,9 @@ SYSTEMLESS.GearCategories = {
   "treasure": "Treasure",
   "weapon": "Weapon"
 };
+
+SYSTEMLESS.GearLocation = {
+  "stored": "Stored",
+  "readied": "Readied",
+  "other": "Other"
+};

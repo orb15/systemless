@@ -4,7 +4,19 @@ export default class SystemlessFigureSheet extends ActorSheet {
   constructor(...args) {
     super(...args);
     this.MAX_ITEM_WEIGHT = 1000;
+
+    this.GearLocationFilter = Object.freeze({ 
+      NOFILTER: 1, 
+      READIED: 2, 
+      STORED: 3, 
+      OTHER: 4 
+    });
+
+    this.currentFilterState = this.GearLocationFilter.NOFILTER;
   }
+
+
+
 
   /* -------------------------------------------------------------
     Overrides and Core Methods
@@ -43,7 +55,7 @@ export default class SystemlessFigureSheet extends ActorSheet {
 
     //add additional items to the context
     foundry.utils.mergeObject(context, {
-      system: actor.system, //this is the data from the template!
+      system: actor.system, //this is the data from the template.jon specific to the system!
       source: actor, //this is data common to all actors in FVTT (name, id, img...)
       config: config,
       inventory: inventory,
@@ -64,6 +76,9 @@ export default class SystemlessFigureSheet extends ActorSheet {
     html.find(".event-item-edit").click(this._onItemEdit.bind(this));
     html.find(".event-item-delete").click(this._onItemDelete.bind(this));
     html.find(".event-item-img").click(this._onShowItem.bind(this));
+    html.find(".event-item-stored-filter").click(this._onToggleStoredFilter.bind(this));
+    html.find(".event-item-readied-filter").click(this._onToggleReadiedFilter.bind(this));
+    html.find(".event-item-other-filter").click(this._onToggleOtherFilter.bind(this));
 
     //establish default listeners
     super.activateListeners(html);
@@ -113,6 +128,45 @@ export default class SystemlessFigureSheet extends ActorSheet {
     this._displayGeneralChatMessage(msgContent);
   }
 
+  _onToggleStoredFilter(event) {
+    event.preventDefault();
+    switch(this.currentFilterState) {
+      case this.GearLocationFilter.NOFILTER:
+        this.currentFilterState = this.GearLocationFilter.STORED;
+        break;
+      case this.GearLocationFilter.STORED:
+        this.currentFilterState = this.GearLocationFilter.NOFILTER;
+        break;
+    }
+    return this.render();
+  }
+
+  _onToggleReadiedFilter(event) {
+    event.preventDefault();
+    switch(this.currentFilterState) {
+      case this.GearLocationFilter.NOFILTER:
+        this.currentFilterState = this.GearLocationFilter.READIED;
+        break;
+      case this.GearLocationFilter.READIED:
+        this.currentFilterState = this.GearLocationFilter.NOFILTER;
+        break;
+    }
+    return this.render();
+  }
+
+  _onToggleOtherFilter(event) {
+    event.preventDefault();
+    switch(this.currentFilterState) {
+      case this.GearLocationFilter.NOFILTER:
+        this.currentFilterState = this.GearLocationFilter.OTHER;
+        break;
+      case this.GearLocationFilter.OTHER:
+        this.currentFilterState = this.GearLocationFilter.NOFILTER;
+        break;
+    }
+    return this.render();
+  }
+
   /* -------------------------------------------------------------
    Utility and Helpers
   ----------------------------------------------------------------*/
@@ -138,7 +192,11 @@ export default class SystemlessFigureSheet extends ActorSheet {
         "hasWeapon": false,
         "hasWeaponWeight": false,
         "hasOther": false,
-        "hasOtherWeight": false
+        "hasOtherWeight": false,
+
+        "isFilterStored": false,
+        "isFilterReadied": false,
+        "isFilterOther": false
       },
       
       "armor": {"weight": 0,"items": [],"type": "armor"},
@@ -152,16 +210,49 @@ export default class SystemlessFigureSheet extends ActorSheet {
     //is of type "gear" as only "gear" should appear in inventory
     allItems.filter(item => {
       if (item.type === "gear") {
-        return true;
+
+        //limit the gear displayed to those items permitted by the location filter
+        //note that is a location is not set, the item will be displayed regardless of filter
+        //this is to draw attention to this item so it can be updated by the player
+        switch(this.currentFilterState) {
+          case this.GearLocationFilter.NOFILTER:
+            inventory.meta.isFilterStored = false;
+            inventory.meta.isFilterReadied = false;
+            inventory.meta.isFilterOther = false;
+            return true;
+          case this.GearLocationFilter.STORED:
+            inventory.meta.isFilterStored = true;
+            inventory.meta.isFilterReadied = false;
+            inventory.meta.isFilterOther = false;
+            if(item.system.location === "stored" || item.system.location === "") {
+              return true;
+            } else {
+              return false;
+            }
+          case this.GearLocationFilter.READIED:
+            inventory.meta.isFilterStored = false;
+            inventory.meta.isFilterReadied = true;
+            inventory.meta.isFilterOther = false;
+            if(item.system.location === "readied" || item.system.location === "") {
+              return true;
+            } else {
+              return false;
+            }
+          case this.GearLocationFilter.OTHER:
+            inventory.meta.isFilterStored = false;
+            inventory.meta.isFilterReadied = false;
+            inventory.meta.isFilterOther = true;
+            if(item.system.location === "other" || item.system.location === "") {
+              return true;
+            } else {
+              return false;
+            }               
+        }
       }
       return false;
     })
     .map(item => {
 
-
-      if (item.type != "gear") {
-
-      }
 
       //if we enter this code, we have at least 1 item
       inventory.meta.hasAnyInventory = true;
@@ -185,6 +276,34 @@ export default class SystemlessFigureSheet extends ActorSheet {
           item.usesWeight = true;
           usesNumericWeight = true;
           inventory.meta.hasNumericWeight = true;
+          break;
+      }
+
+      //determine if this item has a gear location set
+      switch(item.system.location) {
+        case "stored":
+          item.isStored = true;
+          item.isReadied = false;
+          item.isOther = false;
+          item.isLocationUnknown = false;
+          break;
+        case "readied":
+          item.isStored = false;
+          item.isReadied = true;
+          item.isOther = false;
+          item.isLocationUnknown = false;
+          break;
+        case "other":
+          item.isStored = false;
+          item.isReadied = false;
+          item.isOther = true;
+          item.isLocationUnknown = false;
+          break;
+        default:
+          item.isStored = false;
+          item.isReadied = false;
+          item.isOther = false;
+          item.isLocationUnknown = true;
           break;
       }
 

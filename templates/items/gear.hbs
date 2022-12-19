@@ -17,6 +17,10 @@
         <input name="system.weight" type="text" value="{{system.weight}}" placeholder="0"/>
       </div>
 
+      <select class="category" name="system.location">
+        {{selectOptions config.GearLocation selected=system.location blank="-- Status --"}}
+      </select>
+
       <select class="category" name="system.category">
         {{selectOptions config.GearCategories selected=system.category blank="-- Category --"}}
       </select>

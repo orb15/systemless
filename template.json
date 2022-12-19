@@ -34,7 +34,8 @@
 
     "gear": {
       "templates": ["describable", "catagorized"],
-      "weight": ""
+      "weight": "",
+      "location": "-- Location --"
     },
 
     "feature": {

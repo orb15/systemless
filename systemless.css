@@ -210,12 +210,14 @@
 .systemless.sheet.item.gear .weight input {
   margin-left: 4px;
   margin-top: 1px;
+  margin-bottom: 4px;
   font-size: 24px;
   width: 50px;
   height: 30px;
 }
 .systemless.sheet.item.gear .category {
   max-height: 30px;
+  margin-bottom: 4px;
 }
 
 /* ----------------------------------------- */
@@ -302,9 +304,9 @@
   max-height: 24px;
 }
 
-/* ----------------------------------------- ----------*/
+/* ----------------------------------------------------*/
 /* Figure Actor Sheet - Inventory / Feature Partial    */
-/* ----------------------------------------- ----------*/
+/* ----------------------------------------------------*/
 .systemless.sheet.actor .itemlist-partial {
   margin-left: 8px;
   margin-top: 16px;
@@ -314,6 +316,9 @@
   border-bottom: 2px groove #eeede0;
   font-size: 16px;
   max-height: 20px;
+}
+.systemless.sheet.actor .itemlist-partial .header .filter-icon {
+  float: right;
 }
 .systemless.sheet.actor .itemlist-partial .header .weight {
   text-align: right;

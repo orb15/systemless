@@ -3,6 +3,9 @@
   {{!-- Overall Header --}}
   {{#inventory.meta.hasNumericWeight}}
   <div class="flexrow header">
+    {{#inventory.meta.isFilterStored}}<div class="event-item-stored-filter filter-icon">Filter Applied: <a title="Stored"><i class="fas fa-backpack"></i></a></div> {{/inventory.meta.isFilterStored}}
+    {{#inventory.meta.isFilterReadied}}<div class="event-item-readied-filter filter-icon">Filter Applied: <a title="Readied"><i class="fas fa-hand"></i></a></div> {{/inventory.meta.isFilterReadied}}
+    {{#inventory.meta.isFilterOther}}<div class="event-item-other-filter filter-icon">Filter Applied: <a title="Other"><i class="fas fa-square-question"></i></a></div> {{/inventory.meta.isFilterOther}}
     <span class="weight">Total Weight: {{inventory.meta.totalWeight}}</span>
   </div>
   {{/inventory.meta.hasNumericWeight}}
@@ -16,6 +19,10 @@
           <div class="item-image event-item-img" role="button" aria-label="{{this.name}}" style="background-image: url('{{this.img}}')"></div>
           <div class="item-name drop">{{this.name}}</div>
           <div class="drop">{{#this.usesWeight}} Weight: {{this.actWeight}}{{/this.usesWeight}}</div>
+          {{#this.isStored}}<div class="event-item-stored-filter drop"><a title="Stored"><i class="fas fa-backpack"></i></a></div> {{/this.isStored}}
+          {{#this.isReadied}}<div class="event-item-readied-filter drop"><a title="Readied"><i class="fas fa-hand"></i></a></div> {{/this.isReadied}}
+          {{#this.isOther}}<div class="event-item-other-filter drop"><a title="Other"><i class="fas fa-square-question"></i></a></div> {{/this.isOther}}
+          {{#this.isLocationUnknown}}<div class="drop"></div> {{/this.isLocationUnknown}}
           <div class="item-control flexrow drop">
             <div><a class="event-item-edit" title="Edit"><i class="fas fa-edit"></i></a></div>
             <div><a class="event-item-delete" title="Delete"><i class="fas fa-trash"></i></a></div>
