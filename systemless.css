@@ -192,18 +192,36 @@
   border-right: 2px groove #eeede0;
 }
 
+.systemless.sheet.item.feature .category select {
+  max-height: 20px;
+}
+
+.systemless.sheet.item.feature .category .countbox {
+  margin-top: 4px;
+  margin-left: 4px;
+  max-height: 20px;
+}
+
+.systemless.sheet.item.feature .category .countbox input[type="checkbox"] {
+  height: 12px;
+  width: 12px;
+}
+
 /* ----------------------------------------- */
 /* Gear Item Sheet                           */
 /* ----------------------------------------- */
 .systemless.sheet.item.gear .details {
   flex: 0 0 150px;
   max-width: 150px;
-  max-height: 80px;
   margin-left: 4px;
   margin-top: 16px;
-  border: none;
   border-right: 2px groove #eeede0;
 }
+
+.systemless.sheet.item.gear .weight {
+  max-height: 30px;
+}
+
 .systemless.sheet.item.gear .weight span {
   font-size: 24px;
 }
@@ -215,10 +233,23 @@
   width: 50px;
   height: 30px;
 }
-.systemless.sheet.item.gear .category {
-  max-height: 30px;
-  margin-bottom: 4px;
+
+.systemless.sheet.item.gear .details select {
+  margin-top: 4px;
+  max-height: 20px;
 }
+
+.systemless.sheet.item.gear .details .countbox {
+  margin-top: 4px;
+  margin-left: 4px;
+  max-height: 20px;
+}
+
+.systemless.sheet.item.gear .details .countbox input[type="checkbox"] {
+  height: 12px;
+  width: 12px;
+}
+
 
 /* ----------------------------------------- */
 /* Actor Sheet                               */
@@ -345,4 +376,12 @@
 .systemless.sheet.actor .itemlist-partial .itemlist-lists .item-name {
   flex: 1 0 150px;
   min-width: 150px;
+}
+
+.systemless.sheet.actor .itemlist-partial .itemlist-lists .counter {
+  min-width: 110px;
+}
+  
+.systemless.sheet.actor .itemlist-partial .itemlist-lists .item-control {
+  max-width: 40px;
 }

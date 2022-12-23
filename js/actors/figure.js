@@ -80,6 +80,10 @@ export default class SystemlessFigureSheet extends ActorSheet {
     html.find(".event-item-readied-filter").click(this._onToggleReadiedFilter.bind(this));
     html.find(".event-item-other-filter").click(this._onToggleOtherFilter.bind(this));
 
+    //item counters
+    html.find(".event-item-count-increase").click(this._onItemCountIncrease.bind(this));
+    html.find(".event-item-count-decrease").click(this._onItemCountDecrease.bind(this));
+
     //establish default listeners
     super.activateListeners(html);
   }
@@ -165,6 +169,32 @@ export default class SystemlessFigureSheet extends ActorSheet {
         break;
     }
     return this.render();
+  }
+
+  _onItemCountIncrease(event) {
+    event.preventDefault();
+    const li = event.currentTarget.closest(".item");
+    const item = this.actor.items.get(li.dataset.itemId);
+
+    var byAmount = 1
+    if(event.ctrlKey) {
+      byAmount = 10;
+    }
+
+    item.update({"system.count": item.system.count + byAmount});
+  }
+
+  _onItemCountDecrease(event) {
+    event.preventDefault();
+    const li = event.currentTarget.closest(".item");
+    const item = this.actor.items.get(li.dataset.itemId);
+
+    var byAmount = 1
+    if(event.ctrlKey) {
+      byAmount = 10;
+    }
+
+    item.update({"system.count": item.system.count - byAmount});
   }
 
   /* -------------------------------------------------------------

@@ -29,17 +29,21 @@
       },
       "catagorized": {
         "category": "-- Category --"
+      }, 
+      "quantified": {
+        "countEnabled": false,
+        "count": 0
       }
     },
 
     "gear": {
-      "templates": ["describable", "catagorized"],
+      "templates": ["describable", "catagorized", "quantified"],
       "weight": "",
       "location": "-- Location --"
     },
 
     "feature": {
-      "templates": ["describable", "catagorized"]
+      "templates": ["describable", "catagorized", "quantified"]
     }
   }
 

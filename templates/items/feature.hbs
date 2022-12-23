@@ -1,18 +1,24 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
   
-<div class="flexrow core-details">
-  <div class="flexrow">
-    <img class="pic" src="{{source.img}}" title="{{source.name}}" data-edit="img"/>
-    <input class="itemname" name="name" type="text" value="{{source.name}}" placeholder="Name"/>
+  <div class="flexrow core-details">
+    <div class="flexrow">
+      <img class="pic" src="{{source.img}}" title="{{source.name}}" data-edit="img"/>
+      <input class="itemname" name="name" type="text" value="{{source.name}}" placeholder="Name"/>
+    </div>
   </div>
-</div>
-  
+    
 
   <div class="flexrow">
     
-    <select class="category" name="system.category">
-      {{selectOptions config.FeatureCategories selected=system.category blank="-- Category --"}}
-    </select>
+    <div class="flexcol category">
+      <select name="system.category">
+        {{selectOptions config.FeatureCategories selected=system.category blank="-- Category --"}}
+      </select>
+      <div class="flexrow countbox">
+        <label>Count?</label>
+        <input type="checkbox" name="system.countEnabled" {{checked system.countEnabled}}/>
+      </div>
+    </div>
 
     <div class="flexrow editor">
       {{editor system.description target="system.description" button=true owner=true editable=true}}
