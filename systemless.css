@@ -380,6 +380,7 @@
 
 .systemless.sheet.actor .itemlist-partial .itemlist-lists .counter {
   min-width: 110px;
+  max-width: 125px;
 }
   
 .systemless.sheet.actor .itemlist-partial .itemlist-lists .item-control {
