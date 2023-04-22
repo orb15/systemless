@@ -48,6 +48,7 @@ This Changelog will be periodically updated to reflect the latest version of FVT
 
 | Tagged Version | Foundry Compatibility | Notes |
 |----------------|-----------------------|--------------------------|
+| v1.5.2         | FVTT v10 Build 291    |  adjust css for editor   |
 | v1.5.1         | FVTT v10 Build 291    |  adjust css for quantifiables |
 | v1.5.0         | FVTT v10 Build 291    |  add quantifiables to features |
 | v1.4.0         | FVTT v10 Build 291    |  add quantifiables       |

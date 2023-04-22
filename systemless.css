@@ -117,11 +117,20 @@
   font-weight: normal;
 }
 .systemless.sheet .editor {
-  height: 100%;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 4px;
+  min-height: 130px;
+  font-size: 12px;
+  font-style: normal;
+  font-family: Verdana, Helvetica, sans-serif;
 }
-.systemless.sheet .editor .tox-toolbar-overlord,
+.systemless.sheet .editor .editor-content {
+  min-height: 130px;
+}
 .systemless.sheet .editor .tox-toolbar__primary {
-  background: none;
+  font-size: 12px;
+  font-style: normal;
 }
 .systemless.sheet .sheet-header {
   flex: 0 0 100px;
