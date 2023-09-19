@@ -124,9 +124,14 @@
   font-size: 12px;
   font-style: normal;
   font-family: Verdana, Helvetica, sans-serif;
+  flex-grow: 1;
 }
 .systemless.sheet .editor .editor-content {
   min-height: 130px;
+  flex-grow: 1;
+}
+.systemless.sheet .editor .tox-edit-area {
+  flex-grow: 1;
 }
 .systemless.sheet .editor .tox-toolbar__primary {
   font-size: 12px;

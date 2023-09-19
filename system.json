@@ -2,14 +2,14 @@
   "id": "systemless",
   "title": "Systemless System",
   "description": "a systemless VTT system by orb15",
-  "version": "1.5.2",
+  "version": "2.0.0",
   "authors": [    {
     "name": "orb15"
   }],
   "compatibility": {
-    "minimum": 10,
-    "verified": 10,
-    "maximum": 10
+    "minimum": 11,
+    "verified": 11,
+    "maximum": 11
   },
   "scripts": [],
   "esmodules": ["systemless.js"],

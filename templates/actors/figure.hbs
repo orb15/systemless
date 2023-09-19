@@ -19,39 +19,44 @@
 
     <div class="tab" data-group="primary" data-tab="core">
 
-      <div class="flexrow usables">
-        {{#each system.usables}}
-          <div class="flexcol cols {{#unless @last}}rmargin{{/unless}}">
-            <input class="name noborder" name="system.usables.{{@index}}.name" type="text" value="{{this.name}}" placeholder="Name"/>
-            <div class="flexrow">
-              <input class="value" name="system.usables.{{@index}}.value" type="text" value="{{this.value}}" placeholder="0"/>
-              <span class="sep"> / </span>
-              <input class="value" name="system.usables.{{@index}}.max" type="text" value="{{this.max}}" placeholder="0"/>
-            </div> 
-          </div>
-        {{/each}}
-      </div>
+      <div class=""flexcol">
 
-      <div class="flexrow trackables">
-        {{#each system.trackables}}
-          <div class="flexcol cols {{#unless @last}}rmargin{{/unless}}">
-            <input class="name noborder" name="system.trackables.{{@index}}.name" type="text" value="{{this.name}}" placeholder="Name"/>
-            <input class="value" name="system.trackables.{{@index}}.value" type="text" value="{{this.value}}" placeholder="0"/> 
-          </div>
-        {{/each}}
-      </div>
-
-      <div class="flexcol otherinfo">
-        <header>Other Information</header>
-        <div class="editor">
-          {{editor system.notes target="system.notes" button=true owner=true editable=true}}
+        <div class="flexrow usables">
+          {{#each system.usables}}
+            <div class="flexcol cols {{#unless @last}}rmargin{{/unless}}">
+              <input class="name noborder" name="system.usables.{{@index}}.name" type="text" value="{{this.name}}" placeholder="Name"/>
+              <div class="flexrow">
+                <input class="value" name="system.usables.{{@index}}.value" type="text" value="{{this.value}}" placeholder="0"/>
+                <span class="sep"> / </span>
+                <input class="value" name="system.usables.{{@index}}.max" type="text" value="{{this.max}}" placeholder="0"/>
+              </div> 
+            </div>
+          {{/each}}
         </div>
+
+        <div class="flexrow trackables">
+          {{#each system.trackables}}
+            <div class="flexcol cols {{#unless @last}}rmargin{{/unless}}">
+              <input class="name noborder" name="system.trackables.{{@index}}.name" type="text" value="{{this.name}}" placeholder="Name"/>
+              <input class="value" name="system.trackables.{{@index}}.value" type="text" value="{{this.value}}" placeholder="0"/> 
+            </div>
+          {{/each}}
+        </div>
+
+        <div class="flexcol otherinfo">
+          <header>Other Information</header>
+          <div class="editor">
+            {{editor system.notes target="system.notes" button=true owner=true editable=true}}
+          </div>
+
+        </div>
+
       </div>
 
     </div>
 
     {{!-- Inventory Tab --}}
-    <div class="tab inventory flexcol" data-group="primary" data-tab="inventory">
+    <div class="tab inventory" data-group="primary" data-tab="inventory">
       {{#if inventory.meta.usesSimpleInventory}}
         {{> "systems/systemless/templates/actors/parts/inventory-simple-partial.hbs"}}
       {{else}}
@@ -60,7 +65,7 @@
     </div>
 
     {{!-- Features Tab --}}
-    <div class="tab features flexcol" data-group="primary" data-tab="features">
+    <div class="tab features" data-group="primary" data-tab="features">
       {{#if features.meta.usesSimpleFeatures}}
         {{> "systems/systemless/templates/actors/parts/features-simple-partial.hbs"}}
       {{else}}
@@ -69,7 +74,7 @@
     </div>
 
     {{!-- Notes Tab --}}
-    <div class="tab notes flexcol" data-group="primary" data-tab="notes">
+    <div class="tab notes" data-group="primary" data-tab="notes">
       {{> "systems/systemless/templates/actors/parts/notes-partial.hbs"}}
     </div>
 
