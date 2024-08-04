@@ -25,7 +25,7 @@ export default class SystemlessFigureSheet extends ActorSheet {
   //Configure some defaults specific to all sheets
   //@override ActorSheet
   static get defaultOptions() {
-	  return mergeObject(super.defaultOptions, {
+	  return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["systemless", "sheet", "actor", "figure"],
       width: 720,
       height: 680,
