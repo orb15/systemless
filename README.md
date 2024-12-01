@@ -31,7 +31,7 @@ Major version changes in Systemless do _not_ mean that Systemless itself is unde
 Systemless will update it's major version when FVTT makes a major revision (going from FVTT v9 -> v10 for example).
 
 Systemless will make minor version changes to add new features to a major version.
-Minor version updates will never contain breaking chANGES OF any kind.
+Minor version updates will never contain breaking changes of any kind.
 
 Systemless will make patch version changes to address defects or perform chores within a minor version.
 
@@ -44,6 +44,7 @@ This Changelog will be periodically updated to reflect the latest version of FVT
 
 | Tagged Version | Foundry Compatibility | Notes |
 |----------------|-----------------------|--------------------------|
+| v3.0.1         | FVTT v12 Build 331    |  add new graphics        |
 | v3.0.0         | FVTT v12 Build 331    |  upgrade to Foundry v12  |
 | v2.0.0         | FVTT v11 Build 309    |  upgrade to Foundry v11  |
 | v1.5.2         | FVTT v10 Build 291    |  adjust css for editor   |
