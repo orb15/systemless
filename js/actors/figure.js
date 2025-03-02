@@ -428,15 +428,26 @@ export default class SystemlessFigureSheet extends ActorSheet {
     //gimme the number - might be a float!
     const numericWeight = Number(givenWeight);
 
+    var baseweight = numericWeight
+
+    //handle count-enabled items
+    if(item.system.countEnabled) {
+      if(item.system.count <= 0 ) {
+        baseweight = 0
+      } else {
+        baseweight = item.system.count * numericWeight
+      }
+    }
+
     //bounds limiting
-    if(numericWeight <= 0) {
+    if(baseweight <= 0) {
       return {"weight": 0, "weightType": "zeroVal"};
     }
-    if(numericWeight > this.MAX_ITEM_WEIGHT) {
+    if(baseweight > this.MAX_ITEM_WEIGHT) {
       return {"weight": this.MAX_ITEM_WEIGHT, "weightType": "numVal"};
     }
 
-    return {"weight": numericWeight, "weightType": "numVal"};
+    return {"weight": baseweight, "weightType": "numVal"};
   }
 
   _prepareFeatures(allItems) {
