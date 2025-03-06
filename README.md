@@ -44,6 +44,8 @@ This Changelog will be periodically updated to reflect the latest version of FVT
 
 | Tagged Version | Foundry Compatibility | Notes |
 |----------------|-----------------------|--------------------------|
+| v3.3.0         | FVTT v12 Build 331    | add new graphics, fix redundency in graphics |
+| v3.2.0         | FVTT v12 Build 331    | add new graphics         |
 | v3.1.0         | FVTT v12 Build 331    |  item quantity now effects weight |
 | v3.0.1         | FVTT v12 Build 331    |  add new graphics        |
 | v3.0.0         | FVTT v12 Build 331    |  upgrade to Foundry v12  |
