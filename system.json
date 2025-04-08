@@ -2,10 +2,10 @@
   "id": "systemless",
   "title": "Systemless System",
   "description": "a systemless VTT system by orb15",
-  "version": "3.4.0",
-  "url": "https://github.com/orb15/orbs-bad-maps",
+  "version": "3.5.0",
+  "url": "https://github.com/orb15/systemless",
   "manifest": "https://github.com/orb15/systemless/releases/latest/download/system.json",
-  "download": "https://github.com/orb15/systemless/releases/download/v3.4.0/systemless.zip",
+  "download": "https://github.com/orb15/systemless/releases/download/v3.5.0/systemless.zip",
   "authors": [    {
     "name": "orb15"
   }],
