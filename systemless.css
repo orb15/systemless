@@ -331,6 +331,9 @@
 .systemless.sheet.actor.figure .trackables .cols.rmargin {
   margin-right: 6px;
 }
+.systemless.sheet.actor.figure .otherinf {
+  overflow: hidden;
+}
 .systemless.sheet.actor.figure .otherinfo header {
   margin-top: 4px;
   margin-bottom: 4px;
