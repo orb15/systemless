@@ -1,6 +1,6 @@
 {
   "id": "systemless",
-  "title": "Systemless System",
+  "title": "Systemless",
   "description": "a systemless VTT system by orb15",
   "version": "3.4.0",
   "url": "https://github.com/orb15/systemless",
@@ -24,8 +24,5 @@
   "grid": {
     "distance": 5,
     "units": "ft"
-  },
-  "url": "",
-  "manifest": "",
-  "download": ""
+  }
 }
