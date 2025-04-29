@@ -1,56 +1,62 @@
 import SystemlessFigureSheet from "./js/actors/figure.js";
 import SystemlessGearItemSheet from "./js/items/gear.js";
 import SystemlessFeatureItemSheet from "./js/items/feature.js";
-import {preloadHandlebarsTemplates} from "./js/template-partials.js";
-import {SYSTEMLESS} from "./config.js";
+import { preloadHandlebarsTemplates } from "./js/template-partials.js";
+import { SYSTEMLESS } from "./config.js";
+
+// Constants for clarity
+const CORE = "core";
+const SYSTEMLESS_NS = "systemless";
 
 // -----------------------------
 // Hooks - Initialization
 // -----------------------------
 
-Hooks.once("init", function() {
+Hooks.once("init", async function () {
+  console.log("Systemless | Starting initialization...");
 
-  console.log("Systemless | Begin Initialization");
-
-  // ================================
-  //  Register Systemless-specific CONFIG
-  // ================================
+  // Register system-specific CONFIG
   CONFIG.SYSTEMLESS = SYSTEMLESS;
 
   // ================================
-  //  Register Sheets
+  // Actor and Item Sheet Registration
   // ================================
-  
-  ////unregister the base actor sheet
-  Actors.unregisterSheet("core", ActorSheet);
 
-  //register each Systemless Actor sheet
-  Actors.registerSheet("systemless", SystemlessFigureSheet, {
+  console.log("Systemless | Registering custom sheets...");
+
+  // Unregister default sheets
+  Actors.unregisterSheet(CORE, ActorSheet);
+  Items.unregisterSheet(CORE, ItemSheet);
+
+  // Register Systemless Actor sheet
+  Actors.registerSheet(SYSTEMLESS_NS, SystemlessFigureSheet, {
     types: ["figure"],
     makeDefault: true,
   });
 
-    //unregister the base item sheet
-    Items.unregisterSheet("core", ItemSheet);
+  // Register Systemless Item sheets
+  Items.registerSheet(SYSTEMLESS_NS, SystemlessGearItemSheet, {
+    types: ["gear"],
+    makeDefault: true,
+  });
 
-    //register each Systemless Item sheet
-    Items.registerSheet("systemless", SystemlessGearItemSheet, {
-      types: ["gear"],
-      makeDefault: true,
-    });
-    Items.registerSheet("systemless", SystemlessFeatureItemSheet, {
-      types: ["feature"],
-      makeDefault: true,
-    });
+  Items.registerSheet(SYSTEMLESS_NS, SystemlessFeatureItemSheet, {
+    types: ["feature"],
+    makeDefault: true,
+  });
 
-  // ================================
-  //  Post-Init Logging
-  // ================================
-  console.log("Systemless | Initialization Complete");
+  console.log("Systemless | Finished sheet registration.");
 
   // ================================
-  //  Preload Handlebars Templates
+  // Preloading Handlebars Templates
   // ================================
-  return preloadHandlebarsTemplates();
+  try {
+    await preloadHandlebarsTemplates();
+    console.log("Systemless | Templates preloaded successfully.");
+  } catch (error) {
+    console.error("Systemless | Error preloading templates:", error);
+  }
 
+  console.log("Systemless | Initialization complete.");
 });
+
